@@ -1,7 +1,7 @@
 import * as Slot from '@rn-primitives/slot';
 import * as React from 'react';
 import { Text as RNText } from 'react-native';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';
 
 const TextClassContext = React.createContext<string | undefined>(undefined);
 
@@ -15,7 +15,6 @@ function Text({
 }) {
   const textClass = React.useContext(TextClassContext);
   const Component = asChild ? Slot.Text : RNText;
-  console.log("textClass", textClass)
   return (
     <Component
       className={cn('text-base text-foreground web:select-text', textClass, className)}
