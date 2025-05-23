@@ -5,8 +5,15 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Button } from "@/components/ui/button";
 import { Text } from '@/components/ui/text';
 import { H1, H2, H3, H4, P, BlockQuote, Code, Lead, Large, Small, Muted } from "@/components/ui/typography";
-export default function App(): React.JSX.Element {
+import { RadioGroup, RadioGroupItem } from "./components/ui/radio-group";
 
+const options = [
+  { label: 'Option 1', value: '1', id: '1' },
+  { label: 'Option 2', value: '2', id: '2' },
+  { label: 'Option 3', value: '3', id: '3' },
+];
+export default function App(): React.JSX.Element {
+  const [selectedOption, setSelectedOption] = React.useState<string>();
   return (
     <SafeAreaView>
       <H1>Heading 1</H1>
@@ -21,6 +28,12 @@ export default function App(): React.JSX.Element {
       <Small>Small</Small>
       <Muted>Muted</Muted>
       <Button onPress={() => { console.log("clicked") }}><Text>Button</Text></Button>
+
+      <RadioGroup value={selectedOption} onValueChange={setSelectedOption}>
+        {options.map((option) => (
+          <RadioGroupItem key={option.id} option={option} />
+        ))}
+      </RadioGroup>
     </SafeAreaView>
   );
 }
