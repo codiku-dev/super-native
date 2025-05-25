@@ -20,6 +20,7 @@ export function Home() {
     const navigation = useNavigation<NativeStackNavigationProp<any>>();
     return (
         <SafeAreaView>
+
             <H1>Home</H1>
             <H2>Heading 2</H2>
             <H3>Heading 3</H3>
