@@ -14,7 +14,7 @@ export default function App(): React.JSX.Element {
   return (
     <>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName={ROUTES.OTHER} screenOptions={{ headerShown: false }}>
+        <Stack.Navigator initialRouteName={ROUTES.HOME} screenOptions={{ headerShown: false }}>
           <Stack.Screen name={ROUTES.HOME} component={Home} />
           <Stack.Screen name={ROUTES.OTHER} component={Other} />
         </Stack.Navigator>
