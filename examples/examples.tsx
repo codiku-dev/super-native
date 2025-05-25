@@ -8,6 +8,7 @@ import { TypoExample } from "./typo-example";
 import { NavigationExample } from "./navigation-example";
 import { ControlledDialogExample, DialogExample, FullScreenDialogExample } from "./dialog-example";
 import AnimationExample from "./animation-example";
+import { StoreExample } from "./store-example";
 
 export function Examples() {
     const [value, setValue] = useState(true);
@@ -37,8 +38,13 @@ export function Examples() {
                     <Separator />
                     <View className="mb-4">
                         <FormExample />
-
                     </View>
+                    <Separator />
+
+                    <View className="mb-4">
+                        <StoreExample />
+                    </View>
+
                 </View>
             </ScrollView>
         </>

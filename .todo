@@ -6,8 +6,6 @@ env
 
 zustand + debugger
 
-network debug
-
 splash screen
 
 cache inspector
