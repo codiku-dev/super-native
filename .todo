@@ -4,8 +4,10 @@ test
 
 env
 
-zustand + debugger
+zustand debugger
 
 splash screen
 
 cache inspector
+
+persist

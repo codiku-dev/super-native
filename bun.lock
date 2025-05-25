@@ -33,6 +33,7 @@
         "react-native-screens": "^4.10.0",
         "react-native-svg": "^15.12.0",
         "react-native-toast-message": "^2.3.0",
+        "reactotron-plugin-zustand": "^2.0.8",
         "reactotron-react-native": "^5.1.13",
         "tailwind-merge": "^3.3.0",
         "tailwindcss": "^3.4.17",
@@ -1590,6 +1591,8 @@
     "reactotron-core-client": ["reactotron-core-client@2.9.7", "", { "dependencies": { "reactotron-core-contract": "0.2.5" } }, "sha512-QWd0ekjU71CQL70J87NT5f7cmIJAMVZND+YgOaaUgmgFjhiXzHrpeIWs19+IFQPVLsJr97gdi58X8Y62Hchs9w=="],
 
     "reactotron-core-contract": ["reactotron-core-contract@0.2.5", "", {}, "sha512-pxuXFG1jffAWQSdT0FBws+/Xvl8++6T6WrAi4g7AxIZU5FPeut2wq//0yDhDWx6lF82eAo5JTZK7zECQy45QxA=="],
+
+    "reactotron-plugin-zustand": ["reactotron-plugin-zustand@2.0.8", "", { "dependencies": { "deepmerge": "^4.3.1" } }, "sha512-GkioXdXdZIOCi1FHv3xAHAF4eN9GJkpKeNBY8y7Bm1CqjOQvn8x94jNrMsgOMLufm5utsQLUQt8RkPtnHC4UWA=="],
 
     "reactotron-react-native": ["reactotron-react-native@5.1.13", "", { "dependencies": { "mitt": "^3.0.1", "reactotron-core-client": "2.9.7" }, "peerDependencies": { "react-native": ">=0.40.0" } }, "sha512-+mlAzW9DIOfWkz0v3OoquX9uhvvCzJNczx2YBfU+22TxorpaC/nSVddi63qxoL9q4lNScw4EqXSEbdra1jbNaQ=="],
 
