@@ -12,7 +12,12 @@ import Toast from 'react-native-toast-message';
 
 const Stack = createNativeStackNavigator();
 
+if (__DEV__) {
+  require("./configs/reactotron-config");
+}
+
 export default function App(): React.JSX.Element {
+
   return (
     <>
       <NavigationContainer>
