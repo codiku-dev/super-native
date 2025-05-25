@@ -1,8 +1,9 @@
-import * as React from 'react';
-import { Platform, StyleSheet, View, type ViewProps, Modal, Pressable } from 'react-native';
-import Animated, { FadeIn, FadeOut } from 'react-native-reanimated';
-import { X } from 'lucide-react-native';
 import { cn } from '@/lib/utils';
+import { X } from 'lucide-react-native';
+import * as React from 'react';
+import { Platform, StyleSheet, View, type ViewProps, Modal, Pressable, SafeAreaView } from 'react-native';
+import Animated, { FadeIn, FadeOut } from 'react-native-reanimated';
+
 
 type DialogContextType = {
     open: boolean;
@@ -55,7 +56,6 @@ function Dialog({ open: controlledOpen, onOpenChange, children }: DialogProps) {
                     transparent
                     animationType="fade"
                     onRequestClose={() => setOpen(false)}
-                    statusBarTranslucent
                     hardwareAccelerated
                 >
                     {content}
@@ -67,12 +67,17 @@ function Dialog({ open: controlledOpen, onOpenChange, children }: DialogProps) {
 
 type DialogTriggerProps = ViewProps & {
     children: React.ReactNode;
+    disabled?: boolean;
 };
 
-function DialogTrigger({ children, ...props }: DialogTriggerProps) {
+function DialogTrigger({ children, disabled, ...props }: DialogTriggerProps) {
     const { setOpen } = useDialog();
     return (
-        <Pressable onPress={() => { console.log('open'); setOpen(true) }} {...props}>
+        <Pressable
+            onPress={() => setOpen(true)}
+            disabled={disabled}
+            {...props}
+        >
             {children}
         </Pressable>
     );
@@ -89,7 +94,7 @@ function DialogOverlay({
     return (
         <Pressable
             style={[StyleSheet.absoluteFill, { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }]}
-            className={cn('flex bg-black/80 justify-center items-center p-2', className)}
+            className={cn('flex bg-black/80 justify-center items-center', className)}
             onPress={onPress}
             {...props}
         >
@@ -107,35 +112,52 @@ function DialogOverlay({
 function DialogContent({
     className,
     children,
+    fullScreen,
+    showCloseButton = true,
     ...props
-}: ViewProps) {
+}: ViewProps & {
+    fullScreen?: boolean;
+    showCloseButton?: boolean;
+}) {
     const { setOpen } = useDialog();
-    return (
-        <DialogOverlay onPress={() => setOpen(false)}>
-            <Pressable
-                onPress={(e) => {
-                    e.stopPropagation();
-                }}
+
+    const content = (
+        <Pressable
+            onPress={(e) => {
+                e.stopPropagation();
+            }}
+            className={fullScreen ? 'w-full h-full border-0 rounded-none m-0 p-0' : ''}
+        >
+            <View
+                className={cn(
+                    fullScreen
+                        ? 'w-full h-full border-0 rounded-none m-0 p-0'
+                        : 'w-[90%] max-w-lg gap-4 border border-border rounded-lg p-6',
+                    'bg-background shadow-lg',
+                    className
+                )}
+                {...props}
             >
-                <View
-                    className={cn(
-                        'w-[90%] max-w-lg gap-4 border border-border bg-background p-6 shadow-lg rounded-lg',
-                        className
-                    )}
-                    {...props}
-                >
-                    {children}
+                {children}
+                {showCloseButton && (
                     <Pressable
                         className="absolute right-4 top-4 p-0.5 rounded-sm opacity-70"
                         onPress={() => setOpen(false)}
                     >
-                        <X
-                            size={Platform.OS === 'web' ? 16 : 18}
-                            className="text-muted-foreground"
-                        />
+                        <X className="text-muted-foreground" size={18} />
                     </Pressable>
-                </View>
-            </Pressable>
+                )}
+            </View>
+        </Pressable>
+    );
+
+    if (fullScreen) {
+        return content;
+    }
+
+    return (
+        <DialogOverlay onPress={() => setOpen(false)} className='p-0 m-0'>
+            {content}
         </DialogOverlay>
     );
 }

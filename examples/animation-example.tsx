@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Text } from '@/components/ui/text';
+import { H2 } from '@/components/ui/typography';
 import { View } from 'react-native';
 import Animated, { useSharedValue, withSpring } from 'react-native-reanimated';
 
@@ -11,7 +12,8 @@ export default function AnimationExample() {
     };
 
     return (
-        <View style={{ flex: 1, alignItems: 'center' }}>
+        <View >
+            <H2>Animation</H2>
             <Animated.View
                 style={{
                     width,

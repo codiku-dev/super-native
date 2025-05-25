@@ -7,6 +7,7 @@ import { BlockQuote, Lead, Large, Muted, Small } from "@/components/ui/typograph
 export function TypoExample() {
     return (
         <>
+            <H2 >Typography</H2>
             <H3>Heading 3</H3>
             <H4>Heading 4</H4>
             <P>Paragraph</P>
