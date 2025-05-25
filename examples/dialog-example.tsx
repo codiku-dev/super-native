@@ -79,7 +79,7 @@ export function FullScreenDialogExample() {
                             </DialogDescription>
                         </DialogHeader>
                     </View>
-                    <View className="flex-1 items-center justify-center">
+                    <View className="items-center justify-center flex-1">
                         <Text>Full screen content goes here</Text>
                     </View>
                     <View className="p-6">
@@ -94,4 +94,3 @@ export function FullScreenDialogExample() {
         </Dialog>
     );
 }
-
