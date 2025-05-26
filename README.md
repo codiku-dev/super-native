@@ -3,6 +3,7 @@
 ## What is inside ?
 
 - React hook form + zod for form handling
+- react-native-bootsplash for native splash screen handling 
 - React query for api request handling
 - Zustand + Persistence for global state management
 - Nativewind (tailwind)
