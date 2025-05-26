@@ -20,7 +20,8 @@ i18n
         nonExplicitSupportedLngs: false,
         interpolation: {
             escapeValue: false
-        }
+        },
+
     });
 
 export type { Language };

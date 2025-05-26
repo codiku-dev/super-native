@@ -49,7 +49,7 @@ export function StoreExample() {
 
     return (
         <View className="gap-4">
-            <H2>Products Store Example</H2>
+            <H2>Products Store Example (Persistent)</H2>
 
             {selectedProduct ? (
                 <View className="gap-4">
