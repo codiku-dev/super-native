@@ -2,8 +2,10 @@ import { H2 } from "@/components/ui/typography";
 import { View, Image, ScrollView } from "react-native";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
-import { useProductStore, fetchProducts, fetchProductById } from "@/store/product-store";
+import { useProductStore } from "@/store/product/product-store";
 import { useQuery } from "@tanstack/react-query";
+import { ProductApi } from "@/api/product-api";
+import { useProducts } from "@/hooks/products-hooks";
 
 export function StoreExample() {
     const { selectedProduct, setSelectedProduct } = useProductStore();
@@ -13,10 +15,7 @@ export function StoreExample() {
         isLoading: isLoadingProducts,
         error: productsError,
         refetch: refetchProducts
-    } = useQuery({
-        queryKey: ['products'],
-        queryFn: fetchProducts
-    });
+    } = useProducts();
 
     const {
         data: product,
@@ -25,7 +24,7 @@ export function StoreExample() {
         refetch: refetchProduct
     } = useQuery({
         queryKey: ['product', selectedProduct?.id],
-        queryFn: () => selectedProduct ? fetchProductById(selectedProduct.id) : null,
+        queryFn: () => selectedProduct ? ProductApi.fetchProductById(selectedProduct.id) : null,
         enabled: !!selectedProduct
     });
 
