@@ -1,11 +1,13 @@
 
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Examples } from '@/examples/examples';
 
 
 export function Home() {
+    const insets = useSafeAreaInsets();
+
     return (
-        <SafeAreaView className='page'>
+        <SafeAreaView className='page' >
             <Examples />
         </SafeAreaView>
     )

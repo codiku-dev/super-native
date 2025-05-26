@@ -1,7 +1,7 @@
 import "./global.css"
 import "./lib/icon";
-
-import React, { useEffect, useState } from 'react';
+import "./i18n/i18n";
+import React, { useState } from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -13,6 +13,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { DevToolsBubble } from "react-native-react-query-devtools";
 import { SplashScreen } from "./feature/splashscreen";
 import { SafeAreaView, View } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const Stack = createNativeStackNavigator();
 const queryClient = new QueryClient();
@@ -41,16 +42,14 @@ export default function App(): React.JSX.Element {
 
   }
   return (
-    <>
-      <QueryClientProvider client={queryClient}>
-        <NavigationContainer >
-          <Stack.Navigator initialRouteName={ROUTES.HOME} screenOptions={{ headerShown: false }}>
-            <Stack.Screen name={ROUTES.HOME} component={Home} />
-            <Stack.Screen name={ROUTES.OTHER} component={Other} />
-          </Stack.Navigator>
-        </NavigationContainer>
-        <Toast />
-      </QueryClientProvider>
-    </>
+    <QueryClientProvider client={queryClient}>
+      <NavigationContainer >
+        <Stack.Navigator initialRouteName={ROUTES.HOME} screenOptions={{ headerShown: false }}>
+          <Stack.Screen name={ROUTES.HOME} component={Home} />
+          <Stack.Screen name={ROUTES.OTHER} component={Other} />
+        </Stack.Navigator>
+      </NavigationContainer>
+      <Toast />
+    </QueryClientProvider>
   );
 }

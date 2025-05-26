@@ -11,7 +11,7 @@
 - RNR ( UI library inspired by shadcn )
 - Legend list ( Best virtual list at the moment)
 - Reactotron  debugger setup (Debug store/cache, network and logs)
-- React navigation
+- React navigation ( route params and navigation strongly typed )
 - Lucid icons
 - Safe area view
 - A folder "examples" with an exemples for everything
@@ -29,3 +29,7 @@ If you want to be able to use classname on icons add it in ICONS in @lib/icons
 ### Reactotron 
 
 Is setup already (logs , network...)
+
+https://github.com/infinitered/reactotron/releases
+
+Look for Reactotron app in the release list.

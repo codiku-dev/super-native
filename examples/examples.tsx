@@ -9,14 +9,17 @@ import { NavigationExample } from "./navigation-example";
 import { ControlledDialogExample, DialogExample, FullScreenDialogExample } from "./dialog-example";
 import AnimationExample from "./animation-example";
 import { StoreExample } from "./store-example";
+import { I18nExample } from "./i18n-example";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export function Examples() {
+    const insets = useSafeAreaInsets();
     const [value, setValue] = useState(true);
 
     return (
         <>
             <H1 className="mb-4" >Examples</H1>
-            <ScrollView>
+            <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom }}>
                 <View className="flex flex-col gap-4">
                     <View className="mb-4">
                         <TypoExample />
@@ -44,7 +47,10 @@ export function Examples() {
                     <View className="mb-4">
                         <StoreExample />
                     </View>
-
+                    <Separator />
+                    <View className="mb-4">
+                        <I18nExample />
+                    </View>
                 </View>
             </ScrollView>
         </>
