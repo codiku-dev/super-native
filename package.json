@@ -1,5 +1,5 @@
 {
-  "name": "codiku-react-native",
+  "name": "super-native",
   "version": "0.0.1",
   "private": true,
   "author": "Codiku (Robin Lebhar)",
@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "start:cache": "react-native start --reset-cache",
-    "test": "jest",
+    "test": "npx jest",
     "postinstall": "npx pod-install && cd ./android && ./gradlew clean && cd ../"
   },
   "dependencies": {
