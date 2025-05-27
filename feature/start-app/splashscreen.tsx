@@ -11,8 +11,8 @@ export const SplashScreen = ({ onAnimationEnd, onStartLoading }: Props) => {
     const [opacity] = useState(() => new Animated.Value(1));
 
     const { container, logo } = BootSplash.useHideAnimation({
-        manifest: require("../assets/bootsplash/manifest.json"),
-        logo: require("../assets/bootsplash/logo.png"),
+        manifest: require("../../assets/bootsplash/manifest.json"),
+        logo: require("../../assets/bootsplash/logo.png"),
 
         statusBarTranslucent: true,
         navigationBarTranslucent: false,

@@ -5,13 +5,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Home } from "@/pages/home";
 import { ROUTES } from "@/lib/routes";
 import { Other } from "@/pages/other";
-import { QueryClient } from "@tanstack/react-query";
-import { SplashScreen } from "@/feature/splashscreen";
+import { SplashScreen } from "@/feature/start-app/splashscreen";
 import { AppProviders } from "@/providers/app-providers";
 const Stack = createNativeStackNavigator();
 
 if (__DEV__) {
-  require("./configs/reactotron-config");
+  require("../../configs/reactotron-config");
 }
 
 export default function App(): React.JSX.Element {

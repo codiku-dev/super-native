@@ -5,7 +5,7 @@ import { Text } from "@/components/ui/text";
 import { useProductStore } from "@/store/product/product-store";
 import { useQuery } from "@tanstack/react-query";
 import { ProductApi } from "@/api/product-api";
-import { useProducts } from "@/hooks/products-hooks";
+import { useProducts } from "@/hooks/product-hook";
 
 export function StoreExample() {
     const { selectedProduct, setSelectedProduct } = useProductStore();
