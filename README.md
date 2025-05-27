@@ -1,38 +1,89 @@
-# React native Start pack
+# 🚀 SuperNative : React Native Supercharged Boilerplate
 
-## What is inside ?
+![SuperNative Banner](assets/images/readme_banner.png)
 
-- React hook form + zod for form handling
-- react-i18next for internationalisation
-- react-native-bootsplash for native splash screen handling 
-- React query for api request handling
-- Zustand + Persistence for global state management
-- Nativewind (tailwind)
-- Reanimated for animations
-- RNR ( UI library inspired by shadcn )
-- Legend list ( Best virtual list at the moment)
-- Reactotron  debugger setup (Debug store/cache, network and logs)
-- React navigation ( route params and navigation strongly typed )
-- Lucid icons
-- Safe area view
-- Jest + React testing library for unit and integrationt testing
-- A folder "examples" with an exemples for everything
+A highly scalable, production-ready React Native boilerplate packed with modern tools and best practices for building mobile applications as fast as possible.
 
-### Getting started
+## ✨ Features
 
-```bun start```
-and in another terminal
-``` bun  android``` or ```bun run ios```
+### 🛠 Core Technologies
+- **TypeScript** - For type-safe development
+- **React Native** - Latest stable version
+
+### 🎨 UI & Animation
+- **NativeWind** - Tailwind CSS for React Native
+- **Reanimated** - High-performance animations
+- **RNR (React Native Reusables)** Collection of Shadcn like components 
+- **Lucid Icons** - Beautiful, consistent icon set
+- **Safe Area View** - Proper layout handling across devices
+- **React Native Bootsplash** - Native splash screen handling
+- **Legend List** - High-performance virtualized lists
+
+### 🧭 Navigation
+- **React Navigation** - Type-safe routing and navigation with full TypeScript support, deep linking, and gesture handling
+
+### 📡 Data Fetching 
+- **React Query** - Powerful data fetching and caching with automatic background refetching, infinite scrolling, and optimistic updates
+
+### 🗄️ State Management & Persistence
+- **Zustand** - Lightweight state management with persistence, middleware support, and TypeScript-first approach
+
+### 📝 Form and Validations
+- **React Hook Form** - High-performance form handling with minimal re-renders and built-in form state management
+- **Zod** - TypeScript-first schema validation with runtime type checking and automatic type inference
+
+### 🌐 Internationalization
+- **react-i18next** - Complete internationalization solution
+
+### 🐛 Debugging
+- **Reactotron** - Advanced debugging and development tools
+    - Network request monitoring
+    - State management inspection
+    - Logging and error tracking
+
+### 🧪 Testing & Development
+- **Jest + React Testing Library** - Comprehensive testing suite
+
+## 🚀 Getting Started
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone [repository-url]
+cd [project-name]
+```
+
+2. Install dependencies:
+```bash
+bun install
+```
+
+3. In one terminal:
+```bash
+bun start
+```
+
+4. In another temrinal
+```bash
+# For Android
+bun android
+
+# For iOS
+bun ios
+```
+
+## 🛠 Development Tools
+
+### Reactotron Setup
+1. Download Reactotron from the [latest releases](https://github.com/infinitered/reactotron/releases) (look for reactotron-app)
+2. Launch Reactotron
+3. The boilerplate is pre-configured to connect automatically
+
+### Icons 
+To use custom icons with className support, add them to the `ICONS` object in `@lib/icons`.
 
 
-### Icons
+## 📝 License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-If you want to be able to use classname on icons add it in ICONS in @lib/icons
-
-### Reactotron 
-
-Is setup already (logs , network...)
-
-https://github.com/infinitered/reactotron/releases
-
-Look for Reactotron app in the release list.
